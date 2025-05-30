@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Login</title>
+
+</head>
+<body class="bg-gray-100 font-sans antialiased">
+    <nav class="bg-blue-700 p-4 text-white flex justify-between">
+    <div>
+        <h1 class="text-2xl font-bold">
+            AI Blog Generator
+        </h1>
+        </div>
+    </div>
+    <div>
+        <a href="login" class="text-white hover:underline">Login</a>
+
+    </div>
+    </nav>
+    <!-- Main Content -->
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="w-full max-w-xl mx-auto mt-10 p-10 bg-white rounded-lg shadow-md">
+            <h2 class="text-3xl font-bold mb-6">SignUp</h2>
+
+            <!-- Signup Form -->
+            <form class="space-y-4" action="" method="POST">
+                {% csrf_token %}
+
+                {%if error_message%}
+                    <div align= "center" style="color: red; font-size: 20px;">
+                        <h2>{{error_message}}</h2>
+                    </div>
+                {% endif %}
+                <div class="mb-5">
+                    <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your Username..." required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <div class="mb-5">
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="text" id="email" name="email" placeholder="Enter your Email address..." required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <div class="mb-5">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your Password..." required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                
+                <div class="mb-6">
+                    <label for="confirm_password" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="Re-enter your Password..." required
+                            class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <button type="submit"
+                        class="w-full bg-blue-600 text-white font-semibold py-3 px-4 rounded hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300">
+                    SignUp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="text-center p-4 text-black mt-6 ">
+        Powered by Code with Presido
+    </footer>
+
+</body>
+</html>
