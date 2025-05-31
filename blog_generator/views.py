@@ -28,7 +28,7 @@ def user_signup(request):
                     login(request, user)
                     return redirect('index')  # Redirect to the index page after successful signup
             except Exception as e:
-                error_message = f"Error creating account: {str(e)}"
+                error_message = f"Error creating account : {str(e)}"
                 render(request, 'signup.html', {'error_message': error_message})
         else:
             error_message = "Passwords do not match."
